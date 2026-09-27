@@ -71,7 +71,7 @@ export function ProjectsSection() {
           eyebrow="Projects"
           title="Selected"
           accent="work."
-          aside="Operational systems from the rolling mill, plus the family tree page from the earlier site. Media can be added per project without changing the layout."
+          aside="Planning, inventory, and dispatch work from structural rolling mill operations."
         />
 
         {stack ? (

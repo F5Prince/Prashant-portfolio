@@ -40,13 +40,4 @@ export const projects: Project[] = [
     tech: ['Logistics', 'Marketing', 'Orders'],
     featured: true,
   },
-  {
-    title: 'Family Tree Experience',
-    category: 'Personal Web Project',
-    description:
-      'An interactive family tree page built from JSON data and styled as a dedicated page alongside the earlier portfolio.',
-    tech: ['HTML', 'CSS', 'JavaScript', 'JSON'],
-    github: 'https://github.com/F5Prince/Prashant-Mahato',
-    featured: true,
-  },
 ]

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { navItems, profile } from '../data/profile'
+import { publicUrl } from '../utils/frames'
 import { useActiveSection } from '../hooks/useActiveSection'
 import { scrollToId } from '../utils/scroll'
 
@@ -34,12 +35,13 @@ export function Navigation() {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-white/10 bg-[#0c0b0a]/90 px-3 py-2 shadow-[0_10px_40px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:px-4">
         <a
           href="#home"
-          className="rounded-full px-3 py-1.5 font-display text-lg tracking-[0.18em] text-[#f3e7d6]"
+          className="flex items-center gap-2 rounded-full py-1 pr-3 pl-1 font-display text-lg tracking-[0.18em] text-[#f3e7d6]"
           onClick={(event) => {
             event.preventDefault()
             go('home')
           }}
         >
+          <img src={publicUrl('favicon.svg')} alt="" className="h-8 w-8" />
           {profile.name.split(' ')[0]}
         </a>
 

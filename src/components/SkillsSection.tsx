@@ -13,7 +13,7 @@ export function SkillsSection() {
           eyebrow="Skills"
           title="Tools of the"
           accent="planning desk."
-          aside="Grouped from the planning, SAP, and logistics work already on the previous portfolio."
+          aside="Planning, SAP, and logistics skills used in daily mill operations."
         />
 
         <div className="grid gap-5 md:grid-cols-2">

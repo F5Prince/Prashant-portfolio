@@ -1,3 +1,5 @@
+import { publicUrl } from '../utils/frames'
+
 export const profile = {
   name: 'Prashant Mahato',
   role: 'Production Planning & Control Engineer',
@@ -5,7 +7,7 @@ export const profile = {
   email: 'prashant.jsr.013@gmail.com',
   phone: '+91 80025 83303',
   phoneHref: 'tel:+918002583303',
-  resume: '/resume.pdf',
+  resume: publicUrl('resume.pdf'),
   summary:
     'PPC engineer with 6+ years in structural rolling mill operations at Jindal Steel, focused on production planning, logistics coordination, SAP workflows, inventory control, and on-time customer order fulfillment.',
   about: [

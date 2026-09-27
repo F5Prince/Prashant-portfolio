@@ -16,6 +16,10 @@ export function isFrameManifest(value: unknown): value is FrameManifest {
   )
 }
 
+export function publicUrl(path: string) {
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`
+}
+
 export function loadImage(src: string) {
   return new Promise<HTMLImageElement | null>((resolve) => {
     const image = new Image()
@@ -32,9 +36,9 @@ export function loadImage(src: string) {
 
 export async function loadFrameSet(manifest: FrameManifest) {
   const frames = await Promise.all(
-    manifest.frames.map((file) => loadImage(`/frames/${file}`)),
+    manifest.frames.map((file) => loadImage(publicUrl(`frames/${file}`))),
   )
-  const center = await loadImage(`/frames/${manifest.center}`)
+  const center = await loadImage(publicUrl(`frames/${manifest.center}`))
   return {
     frames: frames.filter((frame): frame is HTMLImageElement => frame !== null),
     center,

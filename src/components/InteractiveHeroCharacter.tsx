@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useReducedMotion } from 'framer-motion'
 import { useMediaQuery } from '../hooks/useMediaQuery'
 import { eyePathFrame, frameIndexForAngle, lerpAngle, pointerAngle } from '../utils/angle'
-import { isFrameManifest, loadFrameSet, loadImage } from '../utils/frames'
+import { isFrameManifest, loadFrameSet, loadImage, publicUrl } from '../utils/frames'
 
 type Props = {
   className?: string
@@ -121,12 +121,12 @@ export function InteractiveHeroCharacter({
     }
 
     const boot = async () => {
-      photo = await loadImage('/character.jpg')
+        photo = await loadImage(publicUrl('character.jpg'))
       if (cancelled) return
 
       const needsDirection = canTrack && !reduce
       if (!needsDirection) {
-        center = (await loadImage('/frames/center.webp')) ?? photo
+        center = (await loadImage(publicUrl('frames/center.webp'))) ?? photo
         if (cancelled) return
         if (!center && !photo) {
           setFallback('monogram')
@@ -143,7 +143,7 @@ export function InteractiveHeroCharacter({
       }
 
       try {
-        const response = await fetch('/frames/manifest.json')
+        const response = await fetch(publicUrl('frames/manifest.json'))
         if (!response.ok) throw new Error('missing manifest')
         const data: unknown = await response.json()
         if (!isFrameManifest(data)) throw new Error('invalid manifest')

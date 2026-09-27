@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { profile } from '../data/profile'
+import { publicUrl } from '../utils/frames'
 
-const walkingVideo = '/Prashant%20Walking%20video.mp4'
+const walkingVideo = publicUrl('Prashant%20Walking%20video.mp4')
 
 export function AboutSection() {
   const reduce = useReducedMotion()
